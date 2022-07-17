@@ -11,7 +11,7 @@ func formHandler(w http.ResponseWriter, r *http.Request) {
 		fmt.Fprintf(w, "ParseForm() err : %v", err)
 		return
 	}
-	fmt.Fprintf(w, "POST request successful\n")
+	fmt.Fprintf(w, "request successful\n")
 	name := r.FormValue("name")
 	address := r.FormValue("address")
 
@@ -44,7 +44,7 @@ func main() {
 
 	http.HandleFunc("/hello", helloHandler)
 
-	fmt.Print("starting server at port 8080\n")
+	fmt.Print("starting server at port 8000\n")
 
 	if err := http.ListenAndServe(":8000", nil); err != nil {
 		log.Fatal(err)
